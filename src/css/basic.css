@@ -1,0 +1,68 @@
+:root {
+  --red-100: #e04e39;
+  --red-80: #e67161;
+  --beige-100: #c39367;
+  --beige-80: #cfa985;
+  --grey-80: #565554;
+  --grey-40: #abaaa9;
+  --col-gap: 20px; /* Расстояние между элементами */
+}
+
+.root {
+  margin: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  height: 100%;
+  background-color: #f3e9e1;
+}
+
+.container {
+  flex-direction: column;
+  height: 100%;
+  max-height: 790px;
+  width: 100%;
+  max-width: 1880px;
+  margin: 0 auto;
+  padding: 40px 30px 0;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 48px;
+}
+
+.subtitle {
+  color: var(--grey-80);
+}
+
+.top-section {
+  width: 100%;
+  justify-content: space-between;
+  gap: var(--col-gap);
+  margin-bottom: var(--col-gap);
+}
+
+.top-text {
+  gap: var(--col-gap);
+}
+
+.btn-area {
+  font-size: 0;
+  gap: var(--col-gap);
+}
