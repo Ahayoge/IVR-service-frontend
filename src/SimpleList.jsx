@@ -5,6 +5,7 @@ import Post from './components/Post';
 import BackArrowList from './components/BackArrowList';
 import { useLocalObservable } from 'mobx-react-lite';
 import axios from 'axios';
+import SimpleSearch from './components/SimpleSearch';
 
 const SimpleList = () => {
   const [offers, setOffers] = useState([]);
@@ -39,10 +40,9 @@ const SimpleList = () => {
     titleHistory.addToHistory(title)
     const address = post.children.join('&ids=')
     setTitle(post.textSimple)
-    await axios.get(`http://localhost:8080/api/videoDoc?ids=${address}`)
+    await axios.get(`https://pincode-dev.ru/ivr-hor/videoDoc/ids?ids=${address}`)
     .then(res => res.data).then(data => setOffers(data))
     .catch(e => console.log(e))
-    setOffers(tempChild1);
   };
 
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const SimpleList = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/videoDoc/main')
+    axios.get('https://pincode-dev.ru/ivr-hor/videoDoc/main')
    .then(res => res.data).then(data => setOffers(data))
    .catch(e => console.log(e))}, []);
 
@@ -72,6 +72,8 @@ const SimpleList = () => {
           <h2 className="title">{title}</h2>
           <h2 className="subtitle title">{offers.length} вариантов</h2>
         </div>
+        <SimpleSearch offers={offers} title={title}
+         servicesHistory={servicesHistory} titleHistory={titleHistory} setTitle={setTitle} setOffers={setOffers}/>
         <div className="btn-area flex">
           <button className="btn-reset span-2 btn-beige">Поиск</button>
           <button onClick={() => navigate('/choose')} className="btn-reset span-2 btn-brown">Язык</button>
