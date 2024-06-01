@@ -8,7 +8,6 @@ import axios from "axios";
 const VideoList = () => {
   const location = useLocation();
   const url = location.state ? location.state.url : "";
-  const [isLoading, setIsLoading] = useState(true);
   const [serviceList, setServiceList] = useState([]);
   const [title, setTitle] = useState(
     location.state ? location.state.title : "Услуги"
@@ -79,7 +78,6 @@ const VideoList = () => {
         .then((res) => res.data)
         .then((data) => {
           setServiceList(data);
-          setIsLoading(false);
         })
         .catch((e) => console.error(e));
     }
@@ -116,7 +114,6 @@ const VideoList = () => {
               <div key={post.id} onClick={() => goDeep(post)}>
                 <VideoPost
                   data={post}
-                  isLoading={isLoading}
                   childCount={post.children.length}
                 />
               </div>
@@ -124,12 +121,12 @@ const VideoList = () => {
               <VideoPost
                 key={post.id}
                 data={post}
-                isLoading={isLoading}
                 childCount={post.children.length}
                 childId={post.children[0]}
               />
             )
           )}
+
         </div>
       ) : (
         <>
