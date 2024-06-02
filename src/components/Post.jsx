@@ -12,7 +12,7 @@ const Post = (props) => {
     </>
   ) : (
     <Link className="service-item flex" to={`/standart-list/${props.childId}`} state={{id: props.childId, name: props.data.textSimple}}>
-      {props.data[icon_url] ? (
+      {props.data[iconUrl] ? (
         <img src={props.data[icon_url]} alt="" />
       ) : <></>}
       
