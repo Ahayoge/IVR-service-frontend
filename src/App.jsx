@@ -9,6 +9,7 @@ import IvrServicePage from './IvrServicePage';
 import ExtraInfo from './ExtraInfo';
 import IVRSearchPage from './IVRSearchPage'
 import InfoPage from './InfoPage';
+import ErrorPage from './ErrorPage';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <Route path="/ivr-list/:id/info/:infid" element={<InfoPage/>}></Route>
       <Route path="/standart-list/:id/info/:infid" element={<InfoPage/>}></Route>
       <Route path="/ivr-list/search" element={<IVRSearchPage />}></Route>
+      <Route path="/error" element={<ErrorPage/>}></Route>
     </Routes>
   );
 };

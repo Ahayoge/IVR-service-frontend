@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import BackArrowList from './components/BackArrowList';
 import axios from 'axios';
 
 const IvrServicePage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const id = useRef(location.state ? location.state.id : '0')
+  const {id} = useParams()
   const [service, setService] = useState({})
   const [infoChild, setInfoChild] = useState([])
 
@@ -21,7 +21,7 @@ const IvrServicePage = () => {
         }
         setService(data)
       })
-      .catch(e => console.log(e))
+      .catch(e => navigate("/error"))
   },[])
 
   return (

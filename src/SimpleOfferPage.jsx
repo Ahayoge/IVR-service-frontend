@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useNavigate, useParams,  } from 'react-router-dom';
 import BackArrowList from './components/BackArrowList';
 import axios from 'axios';
 import InfoItemsList from './components/InfoItemsList';
@@ -8,7 +8,8 @@ const SimpleOfferPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [service, setService] = useState({})
-  const id = useRef(location.state ? location.state.id : '0')
+  // const id = useRef(location.state ? location.state.id : '0')
+  const {id} = useParams()
   const [infoChild, setInfoChild] = useState([])
 
   useEffect(() => {

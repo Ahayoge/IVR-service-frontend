@@ -42,7 +42,7 @@ const SimpleList = () => {
     setTitle(post.textSimple)
     await axios.get(`https://pincode-dev.ru/ivr-hor/videoDoc/ids?ids=${address}`)
     .then(res => res.data).then(data => setOffers(data))
-    .catch(e => console.log(e))
+    .catch(e => navigate("/error"))
   };
 
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ const SimpleList = () => {
   useEffect(() => {
     axios.get('https://pincode-dev.ru/ivr-hor/videoDoc/main')
    .then(res => res.data).then(data => setOffers(data))
-   .catch(e => console.log(e))}, []);
+   .catch(e => navigate("/error"))}, []);
 
 
   return (

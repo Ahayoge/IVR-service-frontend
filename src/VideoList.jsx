@@ -61,7 +61,7 @@ const VideoList = () => {
       .then((data) => {
         setServiceList(data);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => navigate("/error"));
   };
 
   useEffect(() => {
@@ -79,7 +79,7 @@ const VideoList = () => {
         .then((data) => {
           setServiceList(data);
         })
-        .catch((e) => console.error(e));
+        .catch((e) =>navigate("/error"));
     }
   }, []);
 
