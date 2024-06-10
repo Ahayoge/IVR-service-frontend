@@ -14,7 +14,7 @@ const SimpleOfferPage = () => {
 
   useEffect(() => {
 
-    axios.get(`https://pincode-dev.ru/ivr-hor/videoDoc/id/${id.current}`).then(res => res.data)
+    axios.get(`https://pincode-dev.ru/ivr-hor/videoDoc/id/${id}`).then(res => res.data)
       .then(data => {
         if (data.infoChildren && data.infoChildren[0] != "null") {
           const infoChildrenURL = data.infoChildren.join("&ids=")

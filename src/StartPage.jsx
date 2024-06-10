@@ -8,7 +8,7 @@ const StartPage = () => {
       <h1 className="greeting span-8">
         Здравствуйте! <br /> Данный сервис является информационным помощником
       </h1>
-      <img className="greeting-video span-8" src={greetingVideo} alt="" />
+      <video autoPlay muted className="greeting-video span-8" src={"https://storage.yandexcloud.net/akhidov-ivr/1.mp4"} alt="" />
       <div className="btn-area flex">
         <Link className="btn-reset span-4 btn-red" to="/choose">
           Начать
