@@ -1,5 +1,5 @@
-import React, { useDeferredValue, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Post from './components/Post';
 import BackArrowList from './components/BackArrowList';

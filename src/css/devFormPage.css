@@ -1,0 +1,15 @@
+.dev-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dev-form textarea {
+    resize: none;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

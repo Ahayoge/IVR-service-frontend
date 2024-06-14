@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import EmployeeButton from "./components/EmployeeButton";
 
 const ChooseLang = () => {
   return (
     <>
+      <EmployeeButton />
       <h1 className="greeting">
         В данном сервисе доступно
         <br />

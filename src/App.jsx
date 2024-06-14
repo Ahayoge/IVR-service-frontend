@@ -10,6 +10,9 @@ import ExtraInfo from './ExtraInfo';
 import IVRSearchPage from './IVRSearchPage'
 import InfoPage from './InfoPage';
 import ErrorPage from './ErrorPage';
+import RegPage from './RegPage';
+import DevList from './DevList';
+import DevAddServicePage from './DevAddServicePage';
 
 const App = () => {
   return (
@@ -26,6 +29,9 @@ const App = () => {
       <Route path="/standart-list/:id/info/:infid" element={<InfoPage/>}></Route>
       <Route path="/ivr-list/search" element={<IVRSearchPage />}></Route>
       <Route path="/error" element={<ErrorPage/>}></Route>
+      <Route path='/registration' element={<RegPage/>}></Route>
+      <Route path='/dev-list' element={<DevList/>}></Route>
+      <Route path='/addservice' element={<DevAddServicePage/>}></Route>
     </Routes>
   );
 };
