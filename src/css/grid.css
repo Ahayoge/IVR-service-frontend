@@ -2,7 +2,7 @@
   width: 86px;
 }
 .span-2 {
-  width: 196px;
+  min-width: 156px;
 }
 .span-3 {
   width: 306px;

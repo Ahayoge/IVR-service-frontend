@@ -1,5 +1,6 @@
 .videocam {
-    width: 856px;
-    height: 416px;
-    border-radius: 10px;
+  width: 600px;
+  height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
 }

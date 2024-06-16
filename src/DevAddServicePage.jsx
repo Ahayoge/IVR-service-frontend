@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import BackArrowList from "./components/BackArrowList";
 import axios from "axios";
 
-const DevAddServicePage = (props) => {
+const DevAddServicePage = props => {
   const navigate = useNavigate();
   const location = useLocation();
   const parent = location.state ? location.state.parent : "";
@@ -36,35 +36,29 @@ const DevAddServicePage = (props) => {
 
   const addService = () => {
     axios
-      .post(
-        "https://pincode-dev.ru/ivr-hor/videoDoc/add",
-        [newService, innerService],
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
-      .then((res) => res.data)
-      .then((data) => {
-        const cock = data["test"]
+      .post("https://pincode-dev.ru/ivr-hor/videoDoc/add", [newService, innerService], {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(res => res.data)
+      .then(data => {
+        const cock = data["test"];
         if (parent) {
           axios
             .get(`https://pincode-dev.ru/ivr-hor/videoDoc/id/${parent}`)
-            .then((res2) => res2.data)
-            .then((data2) => {
+            .then(res2 => res2.data)
+            .then(data2 => {
               if (parent) {
                 axios
-                  .put(
-                    `https://pincode-dev.ru/ivr-hor/videoDoc/update/${parent}`,
-                    {
-                      fieldName: "children",
-                      newValue: [...data2.children, data["test"]],
-                    }
-                  ).then(res => {
-                    if (res.status == 200) alert("Успешно добавлена")
+                  .put(`https://pincode-dev.ru/ivr-hor/videoDoc/update/${parent}`, {
+                    fieldName: "children",
+                    newValue: [...data2.children, data["test"]],
                   })
-                  .catch((e) => console.log("патч"));
+                  .then(res => {
+                    if (res.status == 200) alert("Успешно добавлена");
+                  })
+                  .catch(e => console.log("патч"));
               }
             });
         }
@@ -78,60 +72,69 @@ const DevAddServicePage = (props) => {
           <h2 className="subtitle title">Добавление новой услуги</h2>
         </div>
       </div>
-      <div className="form-wrapper">
-        <div>
+      <div className="form-wrapper flex">
+        <div className="service-left">
           <form className="dev-form">
-            <div className="checkbox-wrapper">
+            <div className="checkbox-wrapper flex">
               <input
                 type="checkbox"
                 id="check"
-                onChange={(e) =>
-                  updateNewService("searchable", e.target.checked)
-                }
+                onChange={e => updateNewService("searchable", e.target.checked)}
               />
               <label htmlFor="check">Промежуточная услуга</label>
             </div>
 
             <input
+              className="service-input"
               type="text"
               placeholder="Название услуги"
               name="title"
               id="title"
-              onChange={(e) => updateNewService("textSimple", e.target.value)}
+              onChange={e => updateNewService("textSimple", e.target.value)}
             />
             <input
+              className="service-input"
               type="url"
               placeholder="Ссылка на видео-название услуги"
               name="urlVideo"
               id="urlVideo"
-              onChange={(e) => updateNewService("videoURL", e.target.value)}
+              onChange={e => updateNewService("videoURL", e.target.value)}
             />
             <input
+              className="service-input"
               type="url"
               placeholder="Ссылка на видео-содержимое услуги"
               name="urlVideo"
               id="urlVideo"
-              onChange={(e) => updateInnerService("videoURL", e.target.value)}
+              onChange={e => updateInnerService("videoURL", e.target.value)}
             />
             <input
+              className="service-input"
               type="url"
               placeholder="Ссылка на svg-иконку"
               name="urlIcon"
               id="urlIcon"
-              onChange={(e) => updateNewService("iconURL", e.target.value)}
+              onChange={e => updateNewService("iconURL", e.target.value)}
             />
             <textarea
+              className="service-input textarea"
               name="textRussian"
               placeholder="Текстовое наполнение услуги"
               id="textRussian"
-              onChange={(e) => updateInnerService("textSimple", e.target.value)}
-            ></textarea>
+              onChange={e => updateInnerService("textSimple", e.target.value)}></textarea>
+            <button
+              className="btn-reset btn-red add-service"
+              onClick={e => {
+                e.preventDefault();
+                addService();
+              }}>
+              + Добавить услугу
+            </button>
           </form>
-          <button onClick={() => addService()}>+ Добавить услугу</button>
         </div>
-        <div>
+        <div className="service-right flex">
           <h3>Подробнее об услуге</h3>
-          <button>+ Добавить раздел</button>
+          <button className="btn-reset btn-red add-section">+ Добавить раздел</button>
         </div>
       </div>
     </>

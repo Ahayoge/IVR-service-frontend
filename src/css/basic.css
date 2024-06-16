@@ -45,6 +45,9 @@ body {
 .title {
   font-weight: bold;
   font-size: 40px;
+  @media (max-width: 1440px) {
+    font-size: 32px;
+  }
 }
 
 .subtitle {

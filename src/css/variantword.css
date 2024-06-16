@@ -1,0 +1,36 @@
+.variant__wrap {
+  background-color: var(--red-80);
+  padding: 15px 25px;
+  border-radius: 40px;
+  gap: 10px;
+  height: 65px;
+}
+
+.variant__word {
+  font-size: 32px;
+  color: #fff;
+  line-height: 1;
+}
+
+.variant__delete {
+  height: 35px;
+  font-size: 24px;
+  width: 35px;
+  background-color: #623B2A;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.words__wrap {
+  gap: 15px;
+  max-width: 100%;
+  flex-basis: 83px;
+  flex-shrink: 0;
+  overflow-x: auto
+}
+
+.search__title {
+  font-size: 32px;
+  font-weight: bold;
+
+}

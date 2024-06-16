@@ -138,11 +138,11 @@ const IVRSearchPage = () => {
         <div className="top-text flex">
           <BackArrowList back={() => navigate(-1)} />
           <h2 className="title">Поиск</h2>
-          <button onClick={search}>ИСКААААТЬ</button>
+          <button className="btn-reset btn-red" onClick={search}>Искать</button>
         </div>
       </div>
-      <p className="">Нажмите “Начать”, когда будете готовы показывать жесты</p>
-      <div className="flex">
+      <p className="search__title">Нажмите “Начать”, когда будете готовы показывать жесты</p>
+      <div className="words__wrap flex">
         {words.map((word) => (
           <VariantWord
             delete={deleteWord}
@@ -153,7 +153,7 @@ const IVRSearchPage = () => {
         ))}
       </div>
       <VideoCam></VideoCam>
-      <button onClick={() => setStart(!start)}>
+      <button className="btn-reset btn-red" onClick={() => setStart(!start)}>
         {start ? "стоп" : "Начать"}
       </button>
     </>

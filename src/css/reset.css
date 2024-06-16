@@ -54,6 +54,7 @@ img,
 svg {
   max-width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 /* Form */
@@ -62,7 +63,7 @@ input::-ms-clear {
 }
 
 button,
-input[type='submit'] {
+input {
   font-family: inherit;
   display: inline-block;
 }

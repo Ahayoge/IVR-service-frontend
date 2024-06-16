@@ -1,15 +1,70 @@
 .dev-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+.checkbox-wrapper {
+  align-items: center;
+}
+
+.checkbox-wrapper label {
+  font-size: 20px;
+}
+
+.checkbox-wrapper input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
 
 .dev-form textarea {
-    resize: none;
+  resize: none;
 }
 
 .form-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.service-input {
+  font-size: 18px;
+  border: #ddd 2px solid;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.service-left {
+  flex-grow: 2;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.service-right {
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.service-right h3 {
+  font-size: 24px;
+}
+
+.add-service {
+  padding: 20px;
+}
+
+.textarea {
+  height: 100%;
+}
+
+.add-section {
+  margin: 0;
 }

@@ -8,7 +8,7 @@
 
 .greeting-video {
   display: block;
-  border-radius: 10px;
+  border-radius: 20px;
   max-height: 416px;
   margin-bottom: var(--col-gap);
 }

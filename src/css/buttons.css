@@ -1,43 +1,40 @@
-/* Сброс стилей для кнопок */
 .btn-reset {
   display: flex;
-  margin: 0;
-  height: 73px;
+  height: 60px;
+  padding: 15px;
   justify-content: center;
   align-items: center;
   border: none;
-  border-radius: 15px;
-  font-size: 28px;
+  border-radius: 10px;
+  font-size: 24px;
   color: #fff;
   user-select: none;
   cursor: pointer;
-  transition: transform .1s ease-in-out, box-shadow .1s ease-in-out;
 }
 
-.btn-reset:active {
-  box-shadow: none;
-  transform: translateY(7px);
-}
-
-/* Кнопка возврата к предыдущей странице (сверху около заголовка) */
 .btn-back {
   background-color: transparent;
   padding-bottom: 10px;
+  width: 57px;
+  height: 50px;
+  flex-shrink: 0;
 }
 
-/* Красная кнопка  */
+.btn-back svg {
+  width: 57px;
+  height: 50px;
+}
+
 .btn-red {
   background-color: var(--red-100);
-  box-shadow: 0px 7px 0px 0px #ec9588;
 }
 
 .btn-red:hover {
   background-color: var(--red-80);
 }
-/* Бежевая кнопка */
+
 .btn-beige {
   background-color: var(--beige-100);
-  box-shadow: 0px 7px 0px 0px #dbbea4;
 }
 
 .btn-beige:hover {
@@ -46,9 +43,9 @@
 
 .btn-brown {
   background-color: #623b2a;
-  box-shadow: 0px 7px 0px 0px #a1897f;
+  margin: 0;
 }
-/* Неактивная кнопка */
+
 .btn-inactive {
   background-color: var(--grey-40);
   cursor: default;
